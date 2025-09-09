@@ -1,0 +1,176 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Personal YouTube Recommender</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/youtube-style.css') }}">
+</head>
+<body>
+    <!-- Header/Navigation -->
+    <header class="youtube-header">
+        <div class="header-left">
+            <button class="menu-icon">
+                <i class="fas fa-bars"></i>
+            </button>
+            <a href="/" class="youtube-logo">
+                <i class="fab fa-youtube"></i>
+                Recommender
+            </a>
+        </div>
+        
+        <div class="header-center">
+            <div class="search-container">
+                <input type="text" class="search-input" placeholder="Search videos...">
+                <button class="search-button">
+                    <i class="fas fa-search"></i>
+                </button>
+            </div>
+        </div>
+        
+        <div class="header-right">
+            <div class="user-avatar">U</div>
+        </div>
+    </header>
+
+    <!-- Sidebar -->
+    <nav class="sidebar">
+        <div class="sidebar-item active" data-action="home">
+            <i class="fas fa-home"></i>
+            Home
+        </div>
+        <div class="sidebar-item" data-action="trending">
+            <i class="fas fa-fire"></i>
+            Trending
+        </div>
+        <div class="sidebar-divider"></div>
+        <div class="sidebar-item" data-action="history">
+            <i class="fas fa-history"></i>
+            History
+        </div>
+        <div class="sidebar-item">
+            <i class="fas fa-clock"></i>
+            Watch Later
+        </div>
+        <div class="sidebar-item">
+            <i class="fas fa-thumbs-up"></i>
+            Liked Videos
+        </div>
+        <div class="sidebar-divider"></div>
+        <div class="sidebar-item">
+            <i class="fas fa-cog"></i>
+            Settings
+        </div>
+        <div class="sidebar-item">
+            <i class="fas fa-question-circle"></i>
+            Help
+        </div>
+        <div class="sidebar-item">
+            <i class="fas fa-comment"></i>
+            Send Feedback
+        </div>
+    </nav>
+
+    <!-- Main Content -->
+    <main class="main-content">
+        <!-- Recommendations Section -->
+        <div class="section-header">
+            <h3><i class="fas fa-star text-warning"></i> Recommended For You</h3>
+        </div>
+        <div id="recommendationsContainer">
+            <div class="video-grid">
+                <!-- Loading skeletons -->
+                <div class="skeleton-card">
+                    <div class="skeleton-thumbnail"></div>
+                    <div class="skeleton-text">
+                        <div class="skeleton-title"></div>
+                        <div class="skeleton-channel"></div>
+                        <div class="skeleton-stats"></div>
+                    </div>
+                </div>
+                <div class="skeleton-card">
+                    <div class="skeleton-thumbnail"></div>
+                    <div class="skeleton-text">
+                        <div class="skeleton-title"></div>
+                        <div class="skeleton-channel"></div>
+                        <div class="skeleton-stats"></div>
+                    </div>
+                </div>
+                <div class="skeleton-card">
+                    <div class="skeleton-thumbnail"></div>
+                    <div class="skeleton-text">
+                        <div class="skeleton-title"></div>
+                        <div class="skeleton-channel"></div>
+                        <div class="skeleton-stats"></div>
+                    </div>
+                </div>
+                <div class="skeleton-card">
+                    <div class="skeleton-thumbnail"></div>
+                    <div class="skeleton-text">
+                        <div class="skeleton-title"></div>
+                        <div class="skeleton-channel"></div>
+                        <div class="skeleton-stats"></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Search Results Section -->
+        <div class="search-results-header">
+            <div class="section-header">
+                <h3><i class="fas fa-search"></i> Search Results</h3>
+            </div>
+        </div>
+        <div id="searchResultsContainer">
+            <div class="text-center text-muted" style="padding: 40px 0;">
+                Search for videos above to see results
+            </div>
+        </div>
+
+        <!-- Watch History Section -->
+        <div class="section-header">
+            <h3><i class="fas fa-history"></i> Recently Watched</h3>
+        </div>
+        <div id="historyContainer">
+            <div class="video-grid">
+                <div class="skeleton-card">
+                    <div class="skeleton-thumbnail"></div>
+                    <div class="skeleton-text">
+                        <div class="skeleton-title"></div>
+                        <div class="skeleton-channel"></div>
+                        <div class="skeleton-stats"></div>
+                    </div>
+                </div>
+                <div class="skeleton-card">
+                    <div class="skeleton-thumbnail"></div>
+                    <div class="skeleton-text">
+                        <div class="skeleton-title"></div>
+                        <div class="skeleton-channel"></div>
+                        <div class="skeleton-stats"></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <!-- Video Modal -->
+    <div class="video-modal">
+        <div class="video-modal-content">
+            <div class="video-modal-header">
+                <h4 class="video-modal-title">Video Player</h4>
+                <button class="close-modal">
+                    <i class="fas fa-times"></i>
+                </button>
+            </div>
+            <div class="video-modal-body">
+                <!-- Video will be loaded here -->
+            </div>
+        </div>
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="{{ url_for('static', filename='js/app.js') }}"></script>
+</body>
+</html>
