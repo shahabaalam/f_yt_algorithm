@@ -29,7 +29,6 @@ A machine learning-powered YouTube recommendation system that provides personali
 1. **Clone the repository:**
    ```bash
    git clone https://github.com/shahabaalam/f_yt_algorithm.git
-   cd youtube-recommender
    ```
 
 2. **Create a virtual environment:**
