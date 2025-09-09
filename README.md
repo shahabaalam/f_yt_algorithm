@@ -28,7 +28,7 @@ A machine learning-powered YouTube recommendation system that provides personali
 
 1. **Clone the repository:**
    ```bash
-   git clone <repository-url>
+   git clone https://github.com/shahabaalam/f_yt_algorithm.git
    cd youtube-recommender
    ```
 
@@ -45,8 +45,6 @@ A machine learning-powered YouTube recommendation system that provides personali
 
 4. **Set up environment variables:**
    ```bash
-   cp .env.example .env
-   ```
    Edit the `.env` file and add your YouTube API key:
    ```
    YOUTUBE_API_KEY=your_actual_api_key_here
