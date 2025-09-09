@@ -54,7 +54,7 @@ A machine learning-powered YouTube recommendation system that provides personali
 
 5. **Run the application:**
    ```bash
-   python app/main.py
+   python -m app.main
    ```
 
 6. **Access the application:**
